@@ -7,5 +7,14 @@ export const initialState = [
 ];
 
 export const reducer = (state, action) => {
-  return state;
+  switch (action.type) {
+    case 'ADD_TODO':
+      console.log('updating state');
+      return [
+        ...state,
+        { item: action.payload.item, completed: false, id: Date.now() }
+      ];
+    default:
+      return state;
+  }
 };
