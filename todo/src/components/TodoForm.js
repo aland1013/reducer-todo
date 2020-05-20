@@ -20,7 +20,7 @@ const TodoForm = ({ dispatch }) => {
       <form onSubmit={handleSubmit}>
         <input
           type='text'
-          name='newTodoTitle'
+          name='newTodo'
           value={newTodo}
           onChange={handleChanges}
         />
