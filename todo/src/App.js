@@ -2,6 +2,7 @@ import React, { useReducer } from 'react';
 import { initialState, reducer } from './reducers/reducer';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
+import ClearButton from './components/ClearButton';
 import './App.css';
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
     <div className='App'>
       <TodoForm dispatch={dispatch} />
       <TodoList todos={todos} dispatch={dispatch} />
+      <ClearButton dispatch={dispatch} />
     </div>
   );
 }

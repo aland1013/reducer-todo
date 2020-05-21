@@ -13,6 +13,7 @@ const TodoForm = ({ dispatch }) => {
       type: 'ADD_TODO',
       payload: { item: newTodo }
     });
+    setNewTodo('');
   };
 
   return (
