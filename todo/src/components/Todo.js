@@ -1,21 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const Todo = ({ todo, dispatch }) => {
-  const [selectedTodo, setSelectedTodo] = useState('');
-  console.log(todo);
-  const handleClick = (e) => {
-    setSelectedTodo(e.target.value);
-    console.log(selectedTodo);
+  const handleClick = () => {
     dispatch({
       type: 'TOGGLE_COMPLETED',
-      payload: { item: todo.item, completed: todo.completed, id: todo.id }
+      payload: { id: todo.id }
     });
   };
 
   return (
     <div onClick={handleClick} key={todo.id}>
-      <h1>{todo.item}</h1>
-      <h3>completed: {`${todo.completed}`}</h3>
+      <h1 className={`${todo.completed ? 'completed' : ''}`}>{todo.item}</h1>
     </div>
   );
 };

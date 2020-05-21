@@ -15,14 +15,11 @@ export const reducer = (state, action) => {
       ];
 
     case 'TOGGLE_COMPLETED':
-      let current = state.find((todo) => todo.id === action.payload.id);
-      let index = state.indexOf(current);
-      console.log('index', index);
-      let newState = [...state];
-      newState[index].completed = !newState[index].completed;
-      console.log(newState);
-
-      return newState;
+      return state.map((todo) => {
+        return todo.id === action.payload.id
+          ? { item: todo.item, id: todo.id, completed: !todo.completed }
+          : todo;
+      });
 
     default:
       return state;
