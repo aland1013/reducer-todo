@@ -10,7 +10,7 @@ function App() {
   return (
     <div className='App'>
       <TodoForm dispatch={dispatch} />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} dispatch={dispatch} />
     </div>
   );
 }
