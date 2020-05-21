@@ -9,8 +9,13 @@ const Todo = ({ todo, dispatch }) => {
   };
 
   return (
-    <div onClick={handleClick} key={todo.id}>
-      <h1 className={`${todo.completed ? 'completed' : ''}`}>{todo.item}</h1>
+    <div
+      className={`${todo.completed ? 'completed' : ''}`}
+      onClick={handleClick}
+      key={todo.id}
+    >
+      <h2>{todo.item}</h2>
+      <p>created: {todo.created}</p>
     </div>
   );
 };
